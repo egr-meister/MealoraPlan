@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Plate kept inside the adaptive-icon safe zone (centered, ~52% width). -->
+    <path
+        android:fillColor="#FFFDFC"
+        android:pathData="M54,54 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+
+    <path
+        android:fillColor="#E4A83B"
+        android:pathData="M54,54 L54,31 A23,23 0 0 1 77,54 Z" />
+    <path
+        android:fillColor="#7FA27A"
+        android:pathData="M54,54 L77,54 A23,23 0 0 1 54,77 Z" />
+    <path
+        android:fillColor="#6575A6"
+        android:pathData="M54,54 L54,77 A23,23 0 0 1 31,54 Z" />
+    <path
+        android:fillColor="#C77B8D"
+        android:pathData="M54,54 L31,54 A23,23 0 0 1 54,31 Z" />
+
+    <path
+        android:strokeColor="#FFFDFC"
+        android:strokeWidth="2.5"
+        android:pathData="M54,54 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0" />
+
+    <path
+        android:strokeColor="#9A513B"
+        android:strokeWidth="3.5"
+        android:pathData="M54,54 m-29,0 a29,29 0 1,0 58,0 a29,29 0 1,0 -58,0" />
+
+    <path
+        android:fillColor="#C87355"
+        android:pathData="M48,20 L60,20 A2.5,2.5 0 0 1 62.5,22.5 L62.5,26 L45.5,26 L45.5,22.5 A2.5,2.5 0 0 1 48,20 Z" />
+</vector>

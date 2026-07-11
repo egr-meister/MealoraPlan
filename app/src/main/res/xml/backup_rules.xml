@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Local-only backup rules. Mealora Plan stores data on-device via DataStore.
+   No cloud sync is implemented; these rules simply describe the local
+   preferences datastore for the platform auto-backup mechanism.
+-->
+<full-backup-content>
+    <include domain="file" path="datastore/" />
+</full-backup-content>

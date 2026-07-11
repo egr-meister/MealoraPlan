@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="warm_cream">#FFF6E8</color>
+    <color name="app_background">#F3EEE6</color>
+    <color name="table_terracotta">#C87355</color>
+    <color name="deep_terracotta">#9A513B</color>
+    <color name="plate_white">#FFFDFC</color>
+    <color name="breakfast_honey">#E4A83B</color>
+    <color name="lunch_sage">#7FA27A</color>
+    <color name="dinner_indigo">#6575A6</color>
+    <color name="snack_rose">#C77B8D</color>
+    <color name="ic_launcher_background">#FFF6E8</color>
+</resources>

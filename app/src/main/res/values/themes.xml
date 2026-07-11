@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. UI is rendered by Compose; this theme only sets
+         the window background and status/navigation handling. -->
+    <style name="Theme.MealoraPlan" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Static splash screen (androidx.core:core-splashscreen). No animation. -->
+    <style name="Theme.MealoraPlan.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/warm_cream</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_plate</item>
+        <item name="postSplashScreenTheme">@style/Theme.MealoraPlan</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Signing / secrets — never commit
+*.jks
+*.keystore
+*.p12
+keystore.properties
+signing.properties
+release-keystore.*
+mealora-plan-release-key.p12
