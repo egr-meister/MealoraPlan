@@ -45,14 +45,29 @@ jobs:
           restore-keys: |
             gradle-${{ runner.os }}-
 
-      - name: Decode release keystore
+      - name: Decode release keystore and write signing config
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           # Decode the PKCS12 keystore into a temporary file outside the repo.
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mealora-release.p12"
-          # Expose only the path via GITHUB_ENV (no secret material is echoed).
-          echo "ANDROID_KEYSTORE_FILE=$RUNNER_TEMP/mealora-release.p12" >> "$GITHUB_ENV"
+          KEYSTORE_PATH="$RUNNER_TEMP/mealora-release.p12"
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$KEYSTORE_PATH"
+
+          # Write a git-ignored keystore.properties at the repo root. The Gradle
+          # build reads this file directly, which is deterministic and does not
+          # depend on environment variables reaching the forked Gradle daemon.
+          {
+            echo "storeFile=$KEYSTORE_PATH"
+            echo "storePassword=$ANDROID_KEYSTORE_PASSWORD"
+            echo "keyAlias=$ANDROID_KEY_ALIAS"
+            echo "keyPassword=$ANDROID_KEY_PASSWORD"
+          } > keystore.properties
+
+          # Also expose the path via env (used by the env-based signing path).
+          echo "ANDROID_KEYSTORE_FILE=$KEYSTORE_PATH" >> "$GITHUB_ENV"
 
       - name: Ensure Gradle wrapper JAR exists
         run: |
