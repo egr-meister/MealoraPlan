@@ -123,6 +123,13 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+        // Opt in to the experimental Compose APIs the app uses (FlowRow/FlowColumn
+        // from ExperimentalLayoutApi, plus Material 3 experimental components).
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+        )
     }
 
     buildFeatures {
